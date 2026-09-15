@@ -12,26 +12,45 @@ import json
 import os
 
 from models import Chunk, Report, RiskItem
+from scoring.lexicon_scorer import LexiconScorer
+from scoring.risk_extractor import RiskExtractor
 from summarizer.prompt_builder import build_prompt
 
 
+def _first_sentence(text: str) -> str:
+    for end in (". ", "! ", "? "):
+        idx = text.find(end)
+        if idx != -1:
+            return text[: idx + 1].strip()
+    return text.strip()
+
+
 def _mock_response(chunks: list[Chunk]) -> dict:
-    """Deterministic fake output used in tests and CI. Derives trivially
-    from the input chunks so groundedness checks have something real to
-    validate against, without calling the API.
+    """Deterministic fake output used in tests and CI. Uses the real Phase 3
+    lexicon scorer and risk extractor against the input chunks (instead of a
+    hardcoded tone/snippet) so groundedness, coherence, and sentiment-agreement
+    checks all have something genuine to validate, without calling the API.
     """
     risk_chunk = next((c for c in chunks if c.section == "Risk Factors"), chunks[0])
     business_chunk = next((c for c in chunks if c.section == "Business"), chunks[0])
-    snippet = risk_chunk.text[:80].strip()
+    results_chunk = next((c for c in chunks if c.section == "Results"), business_chunk)
+
+    scorer = LexiconScorer()
+    full_text = " ".join(c.text for c in chunks)
+    tone = scorer.score_tone(full_text)
+
+    risk_sentences = RiskExtractor(scorer).extract(risk_chunk, top_n=3)
+
     return {
         "highlights": [
-            f"Mock highlight derived from {business_chunk.section} chunk.",
-            f"Mock highlight derived from {business_chunk.doc_id}.",
+            _first_sentence(business_chunk.text),
+            _first_sentence(results_chunk.text),
         ],
         "risks": [
-            {"text": snippet, "section": risk_chunk.section, "citation": risk_chunk.section},
+            {"text": s, "section": risk_chunk.section, "citation": risk_chunk.section}
+            for s in risk_sentences
         ],
-        "tone": "neutral",
+        "tone": tone,
     }
 
 

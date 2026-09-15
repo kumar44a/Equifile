@@ -1,0 +1,96 @@
+[
+  {
+    "report": {
+      "doc_id": "FILING_001",
+      "highlights": [
+        "Example Robotics Corp designs and sells industrial automation robots for the manufacturing sector.",
+        "Revenue increased to 420 million dollars, up from 360 million dollars in the prior year, driven by strong demand and record order backlog."
+      ],
+      "risks": [
+        {
+          "text": "The company's results could be adversely affected if key suppliers experience delays, which may increase production costs.",
+          "section": "Risk Factors",
+          "citation": "Risk Factors"
+        },
+        {
+          "text": "Litigation related to a patent dispute is ongoing and its outcome is uncertain.",
+          "section": "Risk Factors",
+          "citation": "Risk Factors"
+        },
+        {
+          "text": "A downturn in manufacturing capital expenditure could reduce demand for the company's products.",
+          "section": "Risk Factors",
+          "citation": "Risk Factors"
+        }
+      ],
+      "tone": "cautious"
+    },
+    "evaluation": {
+      "doc_id": "FILING_001",
+      "groundedness": 1.0,
+      "sentiment_agreement": true,
+      "coherence_score": 1.0,
+      "errors": []
+    }
+  },
+  {
+    "report": {
+      "doc_id": "FILING_002",
+      "highlights": [
+        "Northwind Solar Energy Inc designs and installs utility-scale solar power systems.",
+        "Revenue increased to 610 million dollars, up from 480 million dollars in the prior year, driven by record project bookings and strong utility demand."
+      ],
+      "risks": [
+        {
+          "text": "Component costs may rise if global supply chains tighten.",
+          "section": "Risk Factors",
+          "citation": "Risk Factors"
+        },
+        {
+          "text": "Project timelines could be affected by permitting delays in certain jurisdictions.",
+          "section": "Risk Factors",
+          "citation": "Risk Factors"
+        },
+        {
+          "text": "Interest rate changes could influence the pace of new utility contracts.",
+          "section": "Risk Factors",
+          "citation": "Risk Factors"
+        }
+      ],
+      "tone": "positive"
+    },
+    "evaluation": {
+      "doc_id": "FILING_002",
+      "groundedness": 1.0,
+      "sentiment_agreement": true,
+      "coherence_score": 1.0,
+      "errors": []
+    }
+  },
+  {
+    "report": {
+      "doc_id": "FILING_003",
+      "highlights": [
+        "Harborview Retail Holdings operates a chain of mid-market apparel stores across the southeastern United States.",
+        "Revenue decreased to 190 million dollars, down from 240 million dollars in the prior year, reflecting weak same-store sales and a goodwill impairment charge of 22 million dollars."
+      ],
+      "risks": [
+        {
+          "text": "Continued softness in consumer spending could further reduce store traffic.",
+          "section": "Risk Factors",
+          "citation": "Risk Factors"
+        }
+      ],
+      "tone": "cautious"
+    },
+    "evaluation": {
+      "doc_id": "FILING_003",
+      "groundedness": 1.0,
+      "sentiment_agreement": true,
+      "coherence_score": 0.75,
+      "errors": [
+        "Expected 2-3 risks, got 1"
+      ]
+    }
+  }
+]

@@ -24,9 +24,9 @@ if these numbers don't match the actual repo state, to prevent the kind of
 README/artifact drift flagged in a previous project review.
 
 <!-- STATS -->
-- Synthetic filings: 1
-- Collected tests: 26
-- Sample summaries in evaluation/sample_summary.json: 0
+- Synthetic filings: 3
+- Collected tests: 30
+- Sample summaries in evaluation/sample_summary.json: 3
 <!-- /STATS -->
 
 ## Design docs

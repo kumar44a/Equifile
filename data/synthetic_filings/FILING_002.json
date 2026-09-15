@@ -1,0 +1,11 @@
+{
+  "doc_id": "FILING_002",
+  "company": "Northwind Solar Energy Inc",
+  "sections": {
+    "Business": "Northwind Solar Energy Inc designs and installs utility-scale solar power systems. The company operates across four regional markets and continues expanding into new territories.",
+    "Results": "Revenue increased to 610 million dollars, up from 480 million dollars in the prior year, driven by record project bookings and strong utility demand. Operating margin improved to 24 percent, and the company outperformed its own prior guidance.",
+    "Risk Factors": "Project timelines could be affected by permitting delays in certain jurisdictions. Component costs may rise if global supply chains tighten. Interest rate changes could influence the pace of new utility contracts.",
+    "Liquidity": "The company held 340 million dollars in cash and equivalents at year end, with a modest revolving credit facility undrawn. Operating cash flow comfortably funded expansion capital expenditures.",
+    "Outlook": "Management expects continued robust growth next year, supported by an expanding order backlog and strong policy tailwinds for renewable energy."
+  }
+}
