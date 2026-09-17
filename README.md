@@ -19,9 +19,15 @@ jupyter notebook notebooks/demo_runner.ipynb
 ## Project stats
 
 The block below is **generated**, not hand-written — run
-`python scripts/check_docs_sync.py --write` to refresh it. CI fails the build
-if these numbers don't match the actual repo state, to prevent the kind of
-README/artifact drift flagged in a previous project review.
+`python scripts/check_docs_sync.py --write` to refresh it, and
+`python scripts/check_docs_sync.py` (no flag) to verify it without writing.
+This is enforced locally via `tests/scripts/test_docs_sync.py` (part of the
+normal `pytest` run) to prevent the kind of README/artifact drift flagged in
+a previous project review. A GitHub Actions workflow
+(`.github/workflows/ci.yml`) runs the same check plus the full test suite on
+an ubuntu/macos/windows matrix on every push; as of this submission it is
+configured but not yet verified green on GitHub, due to an Actions billing
+hold on the repo owner's account unrelated to this code.
 
 <!-- STATS -->
 - Synthetic filings: 3
