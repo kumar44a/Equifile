@@ -91,5 +91,7 @@ jupyter nbconvert --execute --to notebook --inplace notebooks/demo_runner.ipynb
 ```bash
 pip install langchain-community pypdf
 ```
-Set `LOADER_MODE=pdf` in `.env`. No other code changes needed — see
-`loaders/pdf_loader_adapter.py`.
+Set `LOADER_MODE=pdf` in `.env`. `loaders/pdf_loader_adapter.py` wraps
+LangChain's `PyPDFLoader` and adapts its output to the same `Document` shape
+`SyntheticLoader` produces, so no other code changes are needed — chunking,
+summarization, and evaluation are unaware of which loader ran.
